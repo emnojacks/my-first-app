@@ -5,8 +5,14 @@ import './App.css';
 import Inputs from './components/site/Inputs'
 import View from './components/site/View'
 //import { BrowserRouter as Router } from 'react-router-dom';
+import { useState } from 'react';
+
 
 function App() {
+  
+    const [name, setName] = useState("name");
+    const [age, setAge] = useState("age");
+    const [hobbies, setHobbies] = useState("hobbies");
   
   
   return (
@@ -28,8 +34,20 @@ function App() {
       </header>
       <div>
         
-          <Inputs />
-          <View />
+        <Inputs
+          name={name}
+          age={age}
+          hobbies={hobbies}
+          setName={setName}
+          setAge={setAge}
+          setHobbies={setHobbies}
+        />
+        <View
+        //keys are from child, values from parent
+          passedName={name}
+          age={age}
+          hobbies={hobbies}
+        />
        
       
       </div>
